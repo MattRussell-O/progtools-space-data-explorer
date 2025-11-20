@@ -1,6 +1,5 @@
 import requests
 from urllib.error import HTTPError
-import ipywidgets as widgets
 from datetime import datetime, timezone
 import time
 import matplotlib.pyplot as plt
