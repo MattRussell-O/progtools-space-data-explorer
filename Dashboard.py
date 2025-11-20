@@ -1,3 +1,4 @@
+pip install ipywidgets
 import streamlit as st
 import functions
 
