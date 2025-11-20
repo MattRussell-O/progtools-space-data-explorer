@@ -14,7 +14,7 @@ import time
 def sd_CelestialBodies(limit=5, image_width=500, image_height=500, display=True, name_filter=""):
     # Fetch a larger limit to allow for filtering (adjust if API allows more)
     fetch_limit = max(limit, 100)  # Fetch at least 100 for better filtering, but respect the user's limit
-    url = f"https://lldev.thespacedevs.com/2.3.0/celestial_bodies/?mode=detailed&limit={fetch_limit}"
+    url = f"https://ll.thespacedevs.com/2.3.0/celestial_bodies/?mode=detailed&limit={fetch_limit}"
     response = requests.get(url)
     if response.status_code != 200:
         st.error("Failed to fetch celestial bodies.")
@@ -71,7 +71,7 @@ def sd_CelestialBodies(limit=5, image_width=500, image_height=500, display=True,
 def sd_Astronauts(limit=5, image_width=400, image_height=600, display=True, agency_filter=None, nationality_filter=None, min_flights=None, max_flights=None):
     # Fetch a larger limit to allow for filtering (adjust if API allows more)
     fetch_limit = max(limit, 100)  # Fetch at least 100 for better filtering, but respect the user's limit
-    url = f"https://lldev.thespacedevs.com/2.3.0/astronauts?limit={fetch_limit}"
+    url = f"https://ll.thespacedevs.com/2.3.0/astronauts?limit={fetch_limit}"
     response = requests.get(url)
     if response.status_code != 200:
         st.error("Failed to fetch astronauts.")
@@ -161,7 +161,7 @@ def sd_Astronauts(limit=5, image_width=400, image_height=600, display=True, agen
                  
 def sd_Spacecraft(limit=5, image_width=600, image_height=800, display=True, in_space_filter=None, status_filter=None):
     fetch_limit = max(limit, 100)
-    url = f"https://lldev.thespacedevs.com/2.3.0/spacecraft/?mode=detailed&limit={fetch_limit}"
+    url = f"https://ll.thespacedevs.com/2.3.0/spacecraft/?mode=detailed&limit={fetch_limit}"
     response = requests.get(url)
 
     if response.status_code != 200:
@@ -242,7 +242,7 @@ def sd_Launchers(
 
     # Fetch more items to allow filtering before truncation
     fetch_limit = max(limit * 3, 100)
-    url = f"https://lldev.thespacedevs.com/2.3.0/launchers/?mode=detailed&limit={fetch_limit}"
+    url = f"https://ll.thespacedevs.com/2.3.0/launchers/?mode=detailed&limit={fetch_limit}"
     response = requests.get(url)
 
     if response.status_code != 200:
@@ -371,7 +371,7 @@ def saveLaunchData(rows, file_format="csv"):
 
 def sdLaunch(limit=5):
     # Fetch from API
-    url = f"https://lldev.thespacedevs.com/2.0.0/launch/?limit={limit}"
+    url = f"https://ll.thespacedevs.com/2.0.0/launch/?limit={limit}"
     response = requests.get(url)
     data = response.json()
     results = data.get("results", [])
